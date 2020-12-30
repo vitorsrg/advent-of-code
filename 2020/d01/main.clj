@@ -15,15 +15,14 @@
   (:require [clojure.set])
   (:require [clojure.string]))
 
-(defn -main
-  [& args]
+(defn -main [& args]
 
   (let [input-file-name "./input.txt"
         sum-target 2020
         entries-list (map #(Integer/parseInt %)
                           (clojure.string/split-lines (slurp input-file-name)))]
 
-  ;; part 1
+    ;; part 1
     (let [queries-list (map #(- 2020 %) entries-list)
           matches (clojure.set/intersection (set entries-list) (set queries-list))
           entry1 (first matches)
@@ -31,7 +30,7 @@
           pair-mul (* entry1 entry2)]
       (println "part 1" pair-mul))
 
-  ;; part 2
+    ;; part 2
     (let [entries-set (set entries-list)
           entries-count (count entries-list)
           matcher (for [i (range entries-count)
