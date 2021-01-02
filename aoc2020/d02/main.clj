@@ -4,14 +4,14 @@
 ;; url:       https://adventofcode.com/2020/day/2
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2020-12-29
-;; execution: $ lein run -m main
+;; execution: bash ./aoc2020/run.sh d02
 ;; example:
-;;            $ lein run -m main
+;;            bash ./aoc2020/run.sh d02
 ;;            part 1 416
 ;;            part 2 688
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns main
+(ns d02.main
   (:require [clojure.set])
   (:require [clojure.string]))
 
@@ -47,7 +47,7 @@
 
 (defn -main
   [& args]
-  (let [input-file-name "./input.txt"
+  (let [input-file-name (first args)
         input-lines (clojure.string/split-lines (slurp input-file-name))]
     ;; part 1
     (let [input-rows (map p1-parse-line input-lines)

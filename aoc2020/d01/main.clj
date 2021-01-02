@@ -4,20 +4,19 @@
 ;; url:       https://adventofcode.com/2020/day/1
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2020-12-28
-;; execution: $ lein run -m main
+;; execution: bash ./aoc2020/run.sh d01
 ;; example:
-;;            $ lein run -m main
+;;            bash ./aoc2020/run.sh d01
 ;;            part 1 646779
 ;;            part 2 246191688
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns main
+(ns d01.main
   (:require [clojure.set])
   (:require [clojure.string]))
 
-(defn -main
-  [& args]
-  (let [input-file-name "./input.txt"
+(defn -main [& args]
+  (let [input-file-name (first args)
         sum-target 2020
         entries-list (map #(Integer/parseInt %)
                        (clojure.string/split-lines (slurp input-file-name)))]

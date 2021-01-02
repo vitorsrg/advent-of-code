@@ -4,15 +4,15 @@
 ;; url:       https://adventofcode.com/2020/day/3
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2020-12-30
-;; execution: $ lein run -m main
+;; execution: bash ./aoc2020/run.sh d03
 ;; example:
-;;            $ lein run -m main
+;;            bash ./aoc2020/run.sh d03
 ;;            part 1 276
 ;;            part 2 7812180000
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns main
-    ; (:require [clojure.core.matrix])
+(ns d03.main
+    ;; (:require [clojure.core.matrix])
 )
 
 (defn parse-map-line [line] (nth (re-find #"(\S+)" line) 1))
@@ -30,7 +30,7 @@
 
 (defn -main
   [& args]
-  (let [input-file-name "./input.txt"
+  (let [input-file-name (first args)
         input-lines (clojure.string/split-lines (slurp input-file-name))
         tree-map (vec (map parse-map-line input-lines))]
     ;; part 1

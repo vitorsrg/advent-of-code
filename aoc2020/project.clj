@@ -1,4 +1,4 @@
-(defproject aoc2020d01 "0.0.0"
+(defproject aoc2020 "0.0.0"
   ;; :description "FIXME: write description"
   ;; :url "http://example.com/FIXME"
   ;; :license {:name "Eclipse Public License - v 1.0"
