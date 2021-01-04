@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/1
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2020-12-28
-;; execution: bash ./aoc2020/run.sh d01
+;; execution: $ bash ./aoc2020/run.sh d01
 ;; example:
-;;            bash ./aoc2020/run.sh d01
+;;            $ bash ./aoc2020/run.sh d01
 ;;            part 1 646779
 ;;            part 2 246191688
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
