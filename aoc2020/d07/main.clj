@@ -65,7 +65,6 @@
                      (map (fn [[k v]] [(reverse k) v]))
                      (into {}))
         adjacent (build-adjacent-list arcs)]
-    ;; (println weights)
     {:vertices vertices, :arcs arcs, :adjacent adjacent}))
 
 (defn digraph-dfs-reachable-step
