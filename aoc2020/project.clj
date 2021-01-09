@@ -6,7 +6,8 @@
   ;;           :distribution :repo
   ;;           :comments "same as Clojure"}
   :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/math.numeric-tower "0.0.4"]
                  ;; [net.mikera/core.matrix "0.50.0"]
-                 ]
+                ]
   :source-paths ["."]
   :main main)
