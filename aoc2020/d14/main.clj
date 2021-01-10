@@ -16,11 +16,6 @@
 
 (ns d14.main)
 
-(defn replace-many
-  [content & replacements]
-  (let [replacement-list (partition 2 replacements)]
-    (reduce #(apply clojure.string/replace %1 %2) content replacement-list)))
-
 (defn parse-action
   [action-raw]
   (if (re-matches #"^mask.*$" action-raw)
