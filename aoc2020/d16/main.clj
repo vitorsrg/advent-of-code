@@ -3,7 +3,7 @@
 ;; challenge: Day 16: Ticket Translation
 ;; url:       https://adventofcode.com/2020/day/16
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
-;; date:      yyyy-MM-dd
+;; date:      2021-01-10
 ;; execution: $ bash ./aoc2020/run.sh d16 [INPUT_FILE]
 ;; example:
 ;;            $ bash ./aoc2020/run.sh d16
@@ -131,7 +131,7 @@
       (println "part 1" (apply + not-valid-values)))
     ;; part 2
     (let [valid-nearby-tickets
-            (->> (for [i (->> data
+            (vec (for [i (->> data
                               (:nearby-tickets)
                               (count)
                               (range))
@@ -140,15 +140,15 @@
                                   (map (fn [matches] (> (count matches) 0)))
                                   (every? true?)
                                   (true?))]
-                   i)
-                 (mapv #(nth nearby-tickets-matches %)))
+                   ticket))
           cols-valid-fields (->> valid-nearby-tickets
                                  (transpose)
                                  (mapv #(apply clojure.set/intersection %)))
           problem (problem--create (:fields data) cols-valid-fields)
           initial-state (problem--make-initial-state problem)
-          problem-solution (vec (problem--simulate-greedy problem
-                                                          initial-state))
+          problem-solution (->> initial-state
+                                (problem--simulate-greedy problem)
+                                (vec))
           fields-order (->> problem-solution
                             (count)
                             (dec)
@@ -163,5 +163,3 @@
                     (filter #(some? (re-matches #"^departure.*" (first %))))
                     (map second)
                     (apply *))))))
-
-
