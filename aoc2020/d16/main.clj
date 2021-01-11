@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/16
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-10
-;; execution: $ bash ./aoc2020/run.sh d16 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d16 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d16
+;;            $ bash ./aoc2020/run.sh d16 < ./aoc2020/d16/input.txt
 ;;            part 1 23044
 ;;            part 2 3765150732757
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -94,7 +94,7 @@
 
 (defn -main
   [& args]
-  (let [data (->> (first args)
+  (let [data (->> *in*
                   (slurp)
                   (parse-data))
         nearby-tickets-matches

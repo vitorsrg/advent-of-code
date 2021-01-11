@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/9
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-07
-;; execution: $ bash ./aoc2020/run.sh d09
+;; execution: $ bash ./aoc2020/run.sh d09 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d09
+;;            $ bash ./aoc2020/run.sh d09 < ./aoc2020/d09/input.txt
 ;;            part 1
 ;;            part 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -50,7 +50,7 @@
 
 (defn -main
   [& args]
-  (let [numbers (->> (first args)
+  (let [numbers (->> *in*
                      (slurp)
                      (clojure.string/split-lines)
                      (map bigint)

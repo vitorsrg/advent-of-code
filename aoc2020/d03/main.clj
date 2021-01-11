@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/3
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2020-12-30
-;; execution: $ bash ./aoc2020/run.sh d03
+;; execution: $ bash ./aoc2020/run.sh d03 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d03
+;;            $ bash ./aoc2020/run.sh d03 < ./aoc2020/d03/input.txt
 ;;            part 1 276
 ;;            part 2 7812180000
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -30,7 +30,7 @@
 
 (defn -main
   [& args]
-  (let [input-file-name (first args)
+  (let [input-file-name *in*
         input-lines (clojure.string/split-lines (slurp input-file-name))
         tree-map (vec (map parse-map-line input-lines))]
     ;; part 1

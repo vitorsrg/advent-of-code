@@ -4,15 +4,15 @@
 ;; url:       https://adventofcode.com/2020/day/10
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-07
-;; execution: $ bash ./aoc2020/run.sh d10 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d10 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d10 d10/ex01.txt
+;;            $ bash ./aoc2020/run.sh d10 < ./aoc2020/d10/ex01.txt
 ;;            part 1 35
 ;;            part 2 8
-;;            $ bash ./aoc2020/run.sh d10 d10/ex01.txt
+;;            $ bash ./aoc2020/run.sh d10 < ./aoc2020/d10/ex01.txt
 ;;            part 1 220
 ;;            part 2 19208
-;;            $ bash ./aoc2020/run.sh d10
+;;            $ bash ./aoc2020/run.sh d10 < ./aoc2020/d10/input.txt
 ;;            part 1 1980
 ;;            part 2 4628074479616
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -40,7 +40,7 @@
 
 (defn -main
   [& args]
-  (let [numbers (->> (first args)
+  (let [numbers (->> *in*
                      (slurp)
                      (clojure.string/split-lines)
                      (map #(Integer/parseInt %))

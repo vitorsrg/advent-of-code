@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/4
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-02
-;; execution: $ bash ./aoc2020/run.sh d04
+;; execution: $ bash ./aoc2020/run.sh d04 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d04
+;;            $ bash ./aoc2020/run.sh d04 < ./aoc2020/d04/input.txt
 ;;            part 1 206
 ;;            part 2 123
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -50,7 +50,7 @@
 
 (defn -main
   [& args]
-  (let [input-file-name (first args)
+  (let [input-file-name *in*
         input-rows (parse-data (slurp input-file-name))]
     ;; part 1
     (let [input-row-is-valid-count (count (filter p1-row-is-valid? input-rows))]

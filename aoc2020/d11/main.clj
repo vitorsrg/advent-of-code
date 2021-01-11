@@ -4,12 +4,12 @@
 ;; url:       https://adventofcode.com/2020/day/11
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-07
-;; execution: $ bash ./aoc2020/run.sh d11 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d11 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d11 d11/ex01.txt
+;;            $ bash ./aoc2020/run.sh d11 < ./aoc2020/d11/ex01.txt
 ;;            part 1 37
 ;;            part 2 26
-;;            $ bash ./aoc2020/run.sh d11
+;;            $ bash ./aoc2020/run.sh d11 < ./aoc2020/d11/input.txt
 ;;            part 1
 ;;            part 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -82,7 +82,7 @@
 
 (defn -main
   [& args]
-  (let [seat-grid (->> (first args)
+  (let [seat-grid (->> *in*
                        (slurp)
                        (clojure.string/split-lines)
                        (map vec)

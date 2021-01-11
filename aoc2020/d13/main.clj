@@ -4,12 +4,12 @@
 ;; url:       https://adventofcode.com/2020/day/13
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-08
-;; execution: $ bash ./aoc2020/run.sh d13 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d13 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d13 d13/ex01.txt
+;;            $ bash ./aoc2020/run.sh d13 < ./aoc2020/d13/ex01.txt
 ;;            part 1 295
 ;;            part 2 1068781
-;;            $ bash ./aoc2020/run.sh d13
+;;            $ bash ./aoc2020/run.sh d13 < ./aoc2020/d13/input.txt
 ;;            part 1 4722
 ;;            part 2 825305207525452
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -71,7 +71,7 @@
 
 (defn -main
   [& args]
-  (let [[depart-time buses] (->> (first args)
+  (let [[depart-time buses] (->> *in*
                                  (slurp)
                                  (parse-input))]
     ;; (clojure.pprint/pprint buses)

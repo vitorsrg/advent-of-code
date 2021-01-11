@@ -4,9 +4,9 @@
 ;; url:       https://adventofcode.com/2020/day/5
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-02
-;; execution: $ bash ./aoc2020/run.sh d05
+;; execution: $ bash ./aoc2020/run.sh d05 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d05
+;;            $ bash ./aoc2020/run.sh d05 < ./aoc2020/d05/input.txt
 ;;            part 1 864
 ;;            part 2 739
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -37,7 +37,7 @@
 
 (defn -main
   [& args]
-  (let [seats (->> (first args)
+  (let [seats (->> *in*
                    (slurp)
                    (clojure.string/split-lines)
                    (map parse-seat)

@@ -4,12 +4,12 @@
 ;; url:       https://adventofcode.com/2020/day/12
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-08
-;; execution: $ bash ./aoc2020/run.sh d12 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d12 < [INPUT_FILE]
 ;; example:
-;;            $ bash ./aoc2020/run.sh d12 d12/ex01.txt
+;;            $ bash ./aoc2020/run.sh d12 < ./aoc2020/d12/ex01.txt
 ;;            part 1 25
 ;;            part 2 286
-;;            $ bash ./aoc2020/run.sh d12
+;;            $ bash ./aoc2020/run.sh d12 < ./aoc2020/d12/input.txt
 ;;            part 1 582
 ;;            part 2 52069
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -70,7 +70,7 @@
 
 (defn -main
   [& args]
-  (let [actions (->> (first args)
+  (let [actions (->> *in*
                      (slurp)
                      (clojure.string/split-lines)
                      (map parse-action)

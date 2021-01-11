@@ -15,7 +15,7 @@
 
 (defn -main
   [& args]
-  (let [input-file-name (first args)
+  (let [input-file-name *in*
         input-lines (clojure.string/split-lines (slurp input-file-name))]
     ;; part 1
     (let [] (println "part 1"))
