@@ -4,7 +4,7 @@
 ;; url:       https://adventofcode.com/2020/day/22
 ;; author:    Vitor SRG (vitorssrg@gmail.com)
 ;; date:      2021-01-17
-;; execution: $ bash ./aoc2020/run.sh d22 [INPUT_FILE]
+;; execution: $ bash ./aoc2020/run.sh d22 < [INPUT_FILE]
 ;; example:
 ;;            $ bash ./aoc2020/run.sh d22 < ./aoc2020/d22/ex01.txt
 ;;            part 1 306
